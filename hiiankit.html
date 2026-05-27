@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For You ❤️</title>
+
+<style>
+    *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+        font-family: Arial, sans-serif;
+    }
+
+    body{
+        height:100vh;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        background: linear-gradient(135deg,#ffdde1,#ee9ca7);
+        overflow:hidden;
+    }
+
+    /* Floating hearts */
+    .floating-heart{
+        position:absolute;
+        color:red;
+        font-size:20px;
+        animation: float 6s linear infinite;
+        opacity:0.7;
+    }
+
+    @keyframes float{
+        0%{
+            transform: translateY(100vh) scale(0);
+        }
+        100%{
+            transform: translateY(-10vh) scale(1.5);
+        }
+    }
+
+    .card{
+        width:320px;
+        background:white;
+        padding:30px;
+        border-radius:20px;
+        text-align:center;
+        box-shadow:0 10px 25px rgba(0,0,0,0.2);
+        position:relative;
+        z-index:1;
+        animation: pop 1s ease;
+    }
+
+    @keyframes pop{
+        from{
+            transform: scale(0.5);
+            opacity:0;
+        }
+        to{
+            transform: scale(1);
+            opacity:1;
+        }
+    }
+
+    .heart{
+        font-size:70px;
+        animation: heartbeat 1s infinite;
+    }
+
+    @keyframes heartbeat{
+        0%{ transform: scale(1); }
+        25%{ transform: scale(1.1); }
+        50%{ transform: scale(1); }
+        75%{ transform: scale(1.15); }
+        100%{ transform: scale(1); }
+    }
+
+    h2{
+        margin-top:15px;
+        color:#ff4d6d;
+    }
+
+    p{
+        margin-top:10px;
+        color:#555;
+        line-height:1.5;
+    }
+
+    button{
+        margin-top:20px;
+        padding:10px 20px;
+        border:none;
+        border-radius:25px;
+        background:#ff4d6d;
+        color:white;
+        cursor:pointer;
+        font-size:16px;
+        transition:0.3s;
+    }
+
+    button:hover{
+        background:#ff1e4d;
+        transform:scale(1.05);
+    }
+
+    #message{
+        margin-top:15px;
+        color:#d6336c;
+        font-weight:bold;
+        display:none;
+    }
+</style>
+</head>
+
+<body>
+
+<!-- Floating hearts -->
+<div class="floating-heart" style="left:10%;">&#128536;</div>
+<div class="floating-heart" style="left:30%; animation-delay:2s;">&#128152;</div>
+<div class="floating-heart" style="left:50%; animation-delay:4s;">&#128158;</div>
+<div class="floating-heart" style="left:70%; animation-delay:1s;">&#128151;</div>
+<div class="floating-heart" style="left:90%; animation-delay:3s;">&#128150;</div>
+
+<div class="card">
+    <div class="heart">❤️</div>
+
+    <h2>With Love</h2>
+
+    <p>
+        I know you may be upset with me...  
+        but you mean a lot to me 💕
+        can you please not be mad at me &#9825;
+    </p>
+
+    <button onclick="showMessage()">
+        Touch Me Ankit
+    </button>
+
+    <div id="message">
+        Please don't stay angry 🥺❤️
+    </div>
+</div>
+
+<script>
+    function showMessage(){
+        document.getElementById("message").style.display = "block";
+    }
+</script>
+
+</body>
+</html>
